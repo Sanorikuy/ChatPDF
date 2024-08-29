@@ -1,0 +1,33 @@
+[runner]
+
+# Allows you to type a variable or string by itself in a single line of
+# Python code to write it to the app.
+# Default: true
+magicEnabled = true
+
+# Handle script rerun requests immediately, rather than waiting for script
+# execution to reach a yield point. This makes Streamlit much more
+# responsive to user interaction, but it can lead to race conditions in
+# apps that mutate session_state data outside of explicit session_state
+# assignment statements.
+# Default: true
+fastReruns = true
+
+# Raise an exception after adding unserializable data to Session State.
+# Some execution environments may require serializing all data in Session
+# State, so it may be useful to detect incompatibility during development,
+# or when the execution environment will stop supporting it in the future.
+# Default: false
+enforceSerializableSessionState = false
+
+# Adjust how certain 'options' widgets like radio, selectbox, and
+# multiselect coerce Enum members when the Enum class gets
+# re-defined during a script re-run. For more information, check out the docs:
+# https://docs.streamlit.io/develop/concepts/design/custom-classes#enums
+# Allowed values:
+# * "off"          : Disables Enum coercion.
+# * "nameOnly"     : Enum classes can be coerced if their member names match.
+# * "nameAndValue" : Enum classes can be coerced if their member names AND
+#                    member values match.
+# Default: "nameOnly"
+enumCoercion = "nameOnly"
